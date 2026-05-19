@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="container">
+    <main class="container" id="app" tabindex="0" aria-label="AAC speller input area">
       <h1>Binary Tree AAC Speller</h1>
       <p>
         Use only <strong>Left</strong> and <strong>Right</strong> arrow keys to navigate the tree.
         Pause briefly to commit the currently selected letter.
       </p>
+      <p class="hint">Click anywhere on this panel once, then use arrow keys.</p>
 
       <section class="status" aria-live="polite">
         <div><span class="label">Current path:</span> <span id="path">(root)</span></div>

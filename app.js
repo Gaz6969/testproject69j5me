@@ -29,6 +29,7 @@ const LETTER_CODES = {
 
 const COMMIT_DELAY_MS = 900;
 
+const appEl = document.getElementById("app");
 const pathEl = document.getElementById("path");
 const currentLetterEl = document.getElementById("current-letter");
 const typedTextEl = document.getElementById("typed-text");
@@ -132,7 +133,7 @@ function restartCommitTimer() {
   commitTimer = setTimeout(commitLetter, COMMIT_DELAY_MS);
 }
 
-document.addEventListener("keydown", (event) => {
+window.addEventListener("keydown", (event) => {
   if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
   event.preventDefault();
 
@@ -157,3 +158,7 @@ clearBtn.addEventListener("click", () => {
 renderTree(tree, treeEl);
 renderCodes();
 updateStatus();
+
+
+appEl.addEventListener("click", () => appEl.focus());
+window.addEventListener("load", () => appEl.focus());
